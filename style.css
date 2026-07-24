@@ -1,0 +1,212 @@
+/* ==========================================
+   CORES ESTILO LINKEDIN & TEMA ESCURO
+   ========================================== */
+:root {
+    --bg-color: #f3f2ef;       /* Cinza suave estilo LinkedIn */
+    --card-bg: #ffffff;        /* Cartões brancos e limpos */
+    --text-primary: #191919;   /* Texto principal escuro */
+    --text-secondary: #666666; /* Texto secundário em cinza */
+    --accent-color: #0a66c2;   /* Azul profissional LinkedIn */
+    --accent-hover: #004182;   /* Azul escuro ao passar o mouse */
+    --border-color: #e0e0e0;   /* Linhas sutis de divisão */
+    --shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Tema Escuro estilo LinkedIn */
+body.dark-theme {
+    --bg-color: #1d2226;
+    --card-bg: #1d2226;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #38434f;
+    --shadow: 0 0 0 1px rgba(255,255,255,0.1);
+}
+
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* Header & Avatar */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+}
+
+/* Botão de Tema (Integrado no Cabeçalho) */
+.theme-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.08);
+    background-color: var(--border-color);
+}
+
+.profile-avatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.profile-avatar img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Main Container & Cards */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Grid de Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.skill-card {
+    background: var(--bg-color);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.skill-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.skill-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Botões de Contato */
+.links-contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    background: var(--accent-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.github { background-color: #24292e; }
+.btn.linkedin { background-color: #0a66c2; }
+.btn.whatsapp { background-color: #25d366; }
+
+footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+
+/* ==========================================
+   ANIMAÇÕES CSS (Efeito Suave)
+   ========================================== */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
