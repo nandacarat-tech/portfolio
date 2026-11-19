@@ -52,9 +52,16 @@ Este documento é a fonte única de verdade compartilhada entre todas as convers
   - **DNS no Registro.br:** Configurada a Zona DNS em Modo Avançado com entradas validadas e respondendo ativamente:
     - CNAME `erpatlas` -> `atlas-erp-73956.web.app` (Atlas ERP).
     - Registros A (4 IPs) e CNAME `www` -> GitHub Pages (Landing Page).
-  - **Firebase Hosting:** Domínio personalizado `erpatlas.nandatech.com.br` verificado com sucesso pelo Google com emissão automática de certificado SSL gratuito.
-  - **Atlas ERP:** Logotipo oficial NandaTech integrado na tela de login e cabeçalho, com commit e push em `nandacarat-tech/AtlasERP`.
-  - **Configuração de Proxy:** Criados `firebase.json` e `.firebaserc` com rewrite determinístico para o Cloud Run `atlas-erp` na região `southamerica-east1`.
+  - **Modo Demonstração (Live Demo de 1 Clique) & Proteção Anti-Sabotagem (Opção 1 + 3):**
+    - Adicionado botão de destaque "⚡ Entrar com 1 Clique (Demonstração)" em `login.html`.
+    - Adicionado suporte a credenciais demo universais (`admin` / `demo`) com preenchimento em 1 clique via chips interativos.
+    - Implementado endpoint dedicado `/login/demo` com criação imediata de sessão de Administrador e rastreamento em trilha de auditoria.
+    - Implementado desbloqueio em 1 clique para o Módulo Financeiro (`/financial/unlock/demo`) e suporte à senha `demo`.
+    - Exibição de indicador de status no cabeçalho do ERP: `🟢 Modo Demonstração • Vitrine NandaTech`.
+    - **Proteção Anti-Sabotagem da Vitrine:** Blindagem em `app/routes.py` para impedir que visitantes em sessão demo excluam o acervo original semeado (clientes, produtos base, motoristas, rotas e lançamentos financeiros). Novos cadastros criados pelos visitantes podem ser excluídos normalmente.
+    - Suíte de 166 testes automatizados executada e 100% aprovada (`166 passed`).
+    - Commits e push realizados com sucesso em `nandacarat-tech/AtlasERP`.
 
 ---
+
 
