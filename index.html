@@ -3,92 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Fernanda Caratanasov</title>
-    <!-- Conecta o CSS -->
-    <link rel="stylesheet" href="style.css?v=2">
-    <!-- Ícones dos botões -->
+    <title>NandaTech | Engenharia de Software, Cloud & Sistemas Corporativos</title>
+    
+    <!-- Metadados de SEO e Open Graph -->
+    <meta name="description" content="NandaTech: Soluções corporativas escaláveis, DevOps e automação inteligente. Conheça o Atlas ERP em produção no Google Cloud e nossas soluções em tecnologia.">
+    <meta name="author" content="Fernanda Caratanasov | NandaTech">
+    <meta property="og:title" content="NandaTech | Soluções Corporativas, DevOps & Atlas ERP">
+    <meta property="og:description" content="Engenharia de software de alta performance, nuvem escalável e sistemas de gestão empresarial. Acesse a demonstração do Atlas ERP ao vivo.">
+    <meta property="og:image" content="nandatech_logo.jpg">
+    <meta property="og:url" content="https://nandatech.com.br">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="nandatech_logo.jpg">
+
+    <!-- Tipografia Google Fonts (Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Ícones Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
-<body>
+<body class="dark-theme">
 
-    <!-- Cabeçalho estilo LinkedIn com Botão de Tema integrado -->
-    <header class="fade-in">
-        <button id="toggle-theme" class="theme-btn" aria-label="Alternar Tema">
-            <i class="fa-solid fa-moon"></i>
-        </button>
+    <!-- Barra de Navegação Flutuante -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo" aria-label="NandaTech Home">
+                <svg class="logo-symbol" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 80L22 20L45 55L78 20L78 80" stroke="url(#logo-grad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="22" cy="20" r="6" fill="#00e5ff"/>
+                    <circle cx="45" cy="55" r="5" fill="#3a86ff"/>
+                    <circle cx="78" cy="80" r="6" fill="#00e5ff"/>
+                    <defs>
+                        <linearGradient id="logo-grad" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00e5ff"/>
+                            <stop offset="0.5" stop-color="#3a86ff"/>
+                            <stop offset="1" stop-color="#7000ff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="brand-text">NANDA<span>TECH</span></span>
+            </a>
 
-        <div class="profile-avatar">
-            <img src="foto_linkedin_profissional.jpeg" alt="Foto de Perfil de Fernanda" id="avatar-img">
+            <div class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link">Início</a>
+                <a href="#atlas-erp" class="nav-link highlight-link">Atlas ERP</a>
+                <a href="#solucoes" class="nav-link">Soluções</a>
+                <a href="#sobre" class="nav-link">Liderança</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="toggle-theme" class="theme-toggle-btn" aria-label="Alternar Tema Claro/Escuro" title="Alternar Tema">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="https://erp.nandatech.com.br" target="_blank" rel="noopener noreferrer" class="btn-nav-cta">
+                    <span class="live-dot"></span> Acessar ERP
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
-        
-        <h1>Fernanda Caratanasov</h1>
-        <p class="subtitle">Estudante de DevOps | Desenvolvedora em Formação | Em transição para Tech</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="hero">
+        <div class="hero-glow-bg"></div>
+        <div class="container hero-container">
+            <div class="hero-badge fade-in">
+                <span class="badge-dot"></span>
+                <span>Ambiente Cloud Run em Produção Ativa</span>
+            </div>
+            
+            <h1 class="hero-title fade-in-up">
+                Engenharia de Software, Cloud & <span class="gradient-text">Soluções Corporativas</span>
+            </h1>
+
+            <p class="hero-subtitle fade-in-up delay-1">
+                Desenvolvemos sistemas empresariais robustos, pipelines de automação e infraestrutura em nuvem de alta disponibilidade. Da visão operacional de negócios à execução técnica de ponta a ponta.
+            </p>
+
+            <div class="hero-cta-group fade-in-up delay-2">
+                <a href="https://erp.nandatech.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-live-erp">
+                    <i class="fa-solid fa-rocket"></i> Acessar Atlas ERP (Live Demo)
+                </a>
+                <a href="#solucoes" class="btn btn-secondary">
+                    <i class="fa-solid fa-layer-group"></i> Nossas Soluções
+                </a>
+            </div>
+
+            <!-- Faixa de Métricas Reais do Sistema -->
+            <div class="metrics-strip fade-in-up delay-3">
+                <div class="metric-item">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Cloud-Native (GCP)</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Registros e Frota Ativa</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <div class="metric-value">162</div>
+                    <div class="metric-label">Testes Automatizados</div>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <div class="metric-value">OWASP</div>
+                    <div class="metric-label">Auditoria e Blindagem</div>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
-        <!-- Seção Minha Trajetória -->
-        <section id="sobre" class="card fade-in-up">
-            <h2><i class="fa-solid fa-compass"></i> Minha Trajetória & Propósito Tech</h2>
-            <p>
-                Minha trajetória profissional começou no ritmo intenso da empresa familiar de eventos corporativos, onde atuei em todas as frentes da operação — do administrativo e financeiro à logística e entregas. Mais tarde, me especializei e empreendi no setor de saúde e beleza por mais de uma década, desenvolvendo uma forte visão de negócios, gestão e foco na experiência do cliente.
-            </p>
-            <p>
-                A virada para a tecnologia aconteceu ao identificar uma oportunidade real na identificação da inovação em processos no negócio da minha família: um processo extremamente manual de busca e qualificação de contatos corporativos. Para solucionar esse problema, decidi aprender programação e <strong>estou desenvolvendo um projeto de Automação de Processos (RPA em Python)</strong>, que faz a raspagem de dados (Web Scraping) de listas corporativas, tratamento dos contatos e integração automatizada com CRM.
-            </p>
-            <p>
-                O que começou como uma solução prática se tornou minha paixão. Atualmente, estou no 2º semestre de <strong>DevOps (Anhanguera)</strong>, unindo a bagagem de gestão à lógica de programação, automação e infraestrutura. Busco uma oportunidade de estágio ou posição inicial em tecnologia para aplicar essa capacidade analítica e evoluir em projetos corporativos.
-            </p>
-        </section>
+        <!-- Seção Flagship: Atlas ERP -->
+        <section class="section flagship-section" id="atlas-erp">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><i class="fa-solid fa-star"></i> Produto Principal em Produção</div>
+                    <h2 class="section-title">Atlas ERP — Gestão Empresarial Integrada</h2>
+                    <p class="section-desc">
+                        Uma plataforma corporativa completa desenvolvida sob arquitetura em nuvem escalável, com controle de frotas, emissão fiscal, finanças estruturadas e segurança institucional.
+                    </p>
+                </div>
 
-        <!-- Seção Habilidades e Interesses -->
-        <section id="habilidades" class="card fade-in-up delay-1">
-            <h2><i class="fa-solid fa-code"></i> Conhecimentos & Estudos em Andamento</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fa-brands fa-python"></i>
-                    <h3>Python & Automação</h3>
-                    <p>Criando scripts em Python, manipulação de dados e Web Scraping para eliminação de tarefas repetitivas.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-robot"></i>
-                    <h3>RPA & Chatbots</h3>
-                    <p>Estruturação de fluxos automatizados de comunicação, consumo de APIs e automação de processos.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-server"></i>
-                    <h3>DevOps & Infraestrutura</h3>
-                    <p>Fundamentos de Arquitetura de Computadores, Redes (Cisco), Cibersegurança e cultura de entregas rápidas.</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-gears"></i>
-                    <h3>Visão Operacional & Negócios</h3>
-                    <p>Mapeamento de gargalos, resiliência de quem gerenciou negócios reais e foco em resolução de problemas.</p>
+                <div class="flagship-card">
+                    <div class="flagship-content">
+                        <div class="flagship-badge">
+                            <i class="fa-solid fa-server"></i> Google Cloud Run & Cloud SQL MySQL 8.4
+                        </div>
+
+                        <h3>Conectando Operações Reais a Resultados Mensuráveis</h3>
+                        <p>
+                            O <strong>Atlas ERP</strong> foi concebido para eliminar a fragmentação de processos operacionais através de módulos nativamente integrados, alta velocidade de resposta e auditoria imutável.
+                        </p>
+
+                        <div class="feature-checklist">
+                            <div class="checklist-item">
+                                <i class="fa-solid fa-truck-fast"></i>
+                                <div>
+                                    <strong>Gestão de Frotas & Telemetria:</strong> Monitoramento de 30 veículos (leves e pesados), 25 motoristas habilitados com CNHs especializadas e rotas ativas por todo o Brasil.
+                                </div>
+                            </div>
+
+                            <div class="checklist-item">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <div>
+                                    <strong>Emissão & Validação de NF-e:</strong> Fluxo integrado de pedidos de venda diretamente conectado à geração de documentos fiscais eletrônicos compatíveis com padrões SEFAZ.
+                                </div>
+                            </div>
+
+                            <div class="checklist-item">
+                                <i class="fa-solid fa-chart-pie"></i>
+                                <div>
+                                    <strong>Financeiro & DRE Dinâmico:</strong> Demonstração do Resultado do Exercício com segregação de receitas operacionais, controle de contas a pagar/receber e folha de pagamento.
+                                </div>
+                            </div>
+
+                            <div class="checklist-item">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <div>
+                                    <strong>Segurança & Auditoria Imutável (OWASP):</strong> RBAC multinível, interceptador de queries SQL garantindo imutabilidade de logs, mitigação contra IP spoofing e conformidade de pré-produção.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stack de Tecnologias Usada -->
+                        <div class="tech-stack-row">
+                            <span class="tech-tag"><i class="fa-brands fa-python"></i> Python 3.11</span>
+                            <span class="tech-tag"><i class="fa-solid fa-flask"></i> Flask & SQLAlchemy</span>
+                            <span class="tech-tag"><i class="fa-solid fa-database"></i> MySQL 8.4 LTS</span>
+                            <span class="tech-tag"><i class="fa-brands fa-google"></i> Cloud Run</span>
+                            <span class="tech-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+                            <span class="tech-tag"><i class="fa-solid fa-vial-circle-check"></i> 162 Pytest</span>
+                        </div>
+
+                        <!-- Ações de Demonstração -->
+                        <div class="flagship-actions">
+                            <a href="https://erp.nandatech.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Demonstração Ao Vivo
+                            </a>
+                            <a href="https://github.com/nandacarat-tech/AtlasERP" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                <i class="fa-brands fa-github"></i> Ver Código no GitHub
+                            </a>
+                        </div>
+                        <div class="domain-note">
+                            <i class="fa-solid fa-circle-info"></i> Endereço em produção: <code>erp.nandatech.com.br</code>
+                        </div>
+                    </div>
+
+                    <div class="flagship-visual">
+                        <div class="app-mockup-frame">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span class="dot-red"></span>
+                                    <span class="dot-yellow"></span>
+                                    <span class="dot-green"></span>
+                                </div>
+                                <div class="mockup-url">https://erp.nandatech.com.br/dashboard</div>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-card-metric">
+                                    <span>Clientes Ativos</span>
+                                    <strong>500 Clientes</strong>
+                                    <div class="mini-bar"><div class="mini-fill fill-1"></div></div>
+                                </div>
+                                <div class="mockup-card-metric">
+                                    <span>Frotas em Operação</span>
+                                    <strong>27 Veículos Ativos</strong>
+                                    <div class="mini-bar"><div class="mini-fill fill-2"></div></div>
+                                </div>
+                                <div class="mockup-card-metric">
+                                    <span>Rotas em Andamento</span>
+                                    <strong>15 Entregas em Rota</strong>
+                                    <div class="mini-bar"><div class="mini-fill fill-3"></div></div>
+                                </div>
+                                <div class="mockup-status-box">
+                                    <i class="fa-solid fa-check-circle"></i>
+                                    <div>
+                                        <p><strong>Cloud Run Service Health: OK</strong></p>
+                                        <p class="text-muted">Cloud SQL MySQL 8.4 Connected • Latência 22ms</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Contato -->
-        <section id="contato" class="card fade-in-up delay-2">
-            <h2><i class="fa-solid fa-paper-plane"></i> Vamos nos conectar?</h2>
-            <div class="links-contato">
-                <a href="https://github.com/nandacarat-tech" target="_blank" class="btn github">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/fernanda-caratanasov-73220a314/" target="_blank" class="btn linkedin">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://wa.me/5511970366918" target="_blank" class="btn whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
+        <!-- Seção Soluções e Capacidades -->
+        <section class="section solutions-section" id="solucoes">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-tag"><i class="fa-solid fa-gears"></i> Expertise Técnica</div>
+                    <h2 class="section-title">Soluções Corporativas de Ponta a Ponta</h2>
+                    <p class="section-desc">
+                        Engenharia prática direcionada para criar softwares seguros, resilientes e orientados ao crescimento de operações comerciais.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="solution-card">
+                        <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <h3>Sistemas Corporativos & ERP</h3>
+                        <p>
+                            Desenvolvimento de aplicações web empresariais modulares, modelagem relacional de bancos de dados de alta capacidade e regras de negócio com validação estrita.
+                        </p>
+                        <ul class="card-points">
+                            <li><i class="fa-solid fa-check"></i> Controle de vendas, compras e faturamento</li>
+                            <li><i class="fa-solid fa-check"></i> Módulos fiscais e DRE integrado</li>
+                            <li><i class="fa-solid fa-check"></i> Controle de acesso RBAC com trilha de auditoria</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
+                        <h3>Cloud, DevOps & Infraestrutura</h3>
+                        <p>
+                            Arquitetura em nuvem resiliente, conteinerização determinística com Docker e automação de deploys com foco em segurança e baixo custo operacional.
+                        </p>
+                        <ul class="card-points">
+                            <li><i class="fa-solid fa-check"></i> Deploy serverless e auto-scaling no GCP</li>
+                            <li><i class="fa-solid fa-check"></i> Containers seguros sem privilégios de root</li>
+                            <li><i class="fa-solid fa-check"></i> Validação contra vulnerabilidades OWASP</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-card">
+                        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>Automação & RPA Inteligente</h3>
+                        <p>
+                            Eliminação de tarefas manuais e repetitivas por meio de scripts de extração, tratamento massivo de dados e integração automatizada de dados corporativos.
+                        </p>
+                        <ul class="card-points">
+                            <li><i class="fa-solid fa-check"></i> Web Scraping de bases de dados de contatos</li>
+                            <li><i class="fa-solid fa-check"></i> Higienização e validação de documentos (CNPJ/CPF)</li>
+                            <li><i class="fa-solid fa-check"></i> Pipelines de integração contínua com CRM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Liderança Técnica & Trajetória -->
+        <section class="section about-section" id="sobre">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <div class="image-frame">
+                            <img src="foto_linkedin_profissional.jpeg" alt="Fernanda Caratanasov - Fundadora da NandaTech">
+                            <div class="image-accent"></div>
+                        </div>
+                        <div class="about-badge">
+                            <strong>Fernanda Caratanasov</strong>
+                            <span>Fundadora & Líder Técnica</span>
+                        </div>
+                    </div>
+
+                    <div class="about-text-content">
+                        <div class="section-tag"><i class="fa-solid fa-compass"></i> Visão & Liderança</div>
+                        <h2>Onde a Experiência Operacional Encontra a Engenharia</h2>
+                        
+                        <p>
+                            Minha trajetória profissional une dois mundos que raramente conversam com a mesma profundidade: a <strong>vivência real na gestão de negócios</strong> e a <strong>rigorosidade técnica da engenharia de software e DevOps</strong>.
+                        </p>
+                        <p>
+                            Com mais de uma década atuando em operações corporativas complexas — da logística e finanças de empresas de eventos à liderança no setor empresarial —, compreendo os gargalos reais que custam tempo e dinheiro às organizações.
+                        </p>
+                        <p>
+                            Essa bagagem me motivou a fundar a <strong>NandaTech</strong> e desenvolver soluções como o <strong>Atlas ERP</strong>: softwares que não são meros exercícios de código, mas ferramentas robustas, auditadas e projetadas para suportar operações de verdade com alta disponibilidade e conformidade em nuvem.
+                        </p>
+
+                        <div class="credentials-row">
+                            <div class="credential-item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>DevOps & Infraestrutura (Anhanguera)</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fa-solid fa-network-wired"></i>
+                                <span>Arquitetura Cloud & Redes Cisco</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fa-solid fa-user-shield"></i>
+                                <span>Segurança da Informação & OWASP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section class="section contact-section" id="contato">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Conexões & Negócios</div>
+                        <h2>Vamos Construir o Próximo Projeto Juntos?</h2>
+                        <p>
+                            Seja para conhecer a arquitetura do Atlas ERP, discutir oportunidades de engenharia de software corporativa ou avaliar projetos de automação e cloud.
+                        </p>
+                    </div>
+
+                    <div class="contact-buttons-grid">
+                        <a href="https://wa.me/5511970366918" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp Corporativo</strong>
+                                <span>(11) 97036-6918</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/fernanda-caratanasov-73220a314/" target="_blank" rel="noopener noreferrer" class="contact-btn linkedin">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <div>
+                                <strong>LinkedIn Profissional</strong>
+                                <span>Conectar no perfil</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/nandacarat-tech" target="_blank" rel="noopener noreferrer" class="contact-btn github">
+                            <i class="fa-brands fa-github"></i>
+                            <div>
+                                <strong>GitHub Corporativo</strong>
+                                <span>@nandacarat-tech</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-          <footer>
-        <p>&copy; 2026 - Desenvolvido com HTML, CSS e JS por Fernanda Caratanasov.</p>
+    <!-- Rodapé Corporativo -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="brand-text">NANDA<span>TECH</span></div>
+                <p>Engenharia de Software, Cloud & Automação Inteligente.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#hero">Início</a>
+                <a href="https://erp.nandatech.com.br" target="_blank" rel="noopener noreferrer">Atlas ERP</a>
+                <a href="#solucoes">Soluções</a>
+                <a href="#sobre">Liderança</a>
+                <a href="#contato">Contato</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NandaTech. Todos os direitos reservados. Domínio oficial: <code>nandatech.com.br</code></p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Arquivo JavaScript -->
-    <script src="script.js"></script>
+    <!-- Script Interativo -->
+    <script src="script.js?v=3"></script>
 </body>
-</html>
+</html>
