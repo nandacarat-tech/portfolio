@@ -13,9 +13,10 @@ Este documento é a fonte única de verdade compartilhada entre todas as convers
 
 ## 2. Decisões Acordadas e Diretrizes Fixadas
 - **Domínio Principal:** `nandatech.com.br` -> Landing Page Institucional e Vitrine Técnica da NandaTech.
-- **Subdomínio do ERP:** `erp.nandatech.com.br` -> Atlas ERP em produção no GCP Cloud Run (`southamerica-east1`).
-- **Padrões de Design:** Visual refinado, sem clichês ("No AI Slop"), paleta corporativa elegante, tipografia impecável, responsividade completa e suporte a temas Light e Dark.
-- **Botão de Live Demo:** Destaque de conversão direto para o Atlas ERP em produção.
+- **Subdomínio do ERP:** `erpatlas.nandatech.com.br` -> Atlas ERP em produção com SSL no Firebase Hosting conectado ao Cloud Run (`southamerica-east1`).
+- **Padrões de Design:** Identidade visual oficial NandaTech definida com logotipo Minimalista Executivo (monograma N angular em azul marinho e detalhe ascendente em ciano platina).
+- **Visão de Negócios:** Estrutura escalável para múltiplos ERPs verticais MEI sob a marca NandaTech (`erpatlas`, `erpbeauty`, etc.).
+- **Botão de Live Demo:** Destaque de conversão na Landing Page direcionando para `erpatlas.nandatech.com.br`.
 
 ---
 
@@ -43,7 +44,17 @@ Este documento é a fonte única de verdade compartilhada entre todas as convers
   - Repositório sincronizado em `https://github.com/nandacarat-tech/AtlasERP`.
   - Registro de `nandatech.com.br` no Registro.br.
 
-### Sessão Atual (2026-11-19)
-- **Tópico:** Configuração DNS no Registro.br (`erp.nandatech.com.br` e `nandatech.com.br`), SSL gerenciado do Cloud Run e desenvolvimento da nova Landing Page profissional da NandaTech.
+### Sessão Atual — Identidade Visual, Landing Page e Apontamentos DNS (2026-11-19)
+- **Tópico:** Criação do Logotipo Oficial NandaTech, implementação e publicação da nova Landing Page corporativa, apontamento DNS no Registro.br e vinculação ao Firebase Hosting.
+- **O que foi realizado:**
+  - **Identidade Visual:** Criado e aprovado o Logotipo Oficial NandaTech (Minimalista Executivo & Linear), vetorizado em SVG na Navbar e salvo em alta definição (`nandatech_logo.jpg`).
+  - **Landing Page NandaTech:** Desenvolvida e publicada em `nandatech.com.br` via GitHub Pages (`nandacarat-tech/portfolio`) com design B2B premium, vitrine especial do Atlas ERP, alternador Dark/Light e responsividade completa. Testada em `http://localhost:3000`.
+  - **DNS no Registro.br:** Configurada a Zona DNS em Modo Avançado com entradas validadas e respondendo ativamente:
+    - CNAME `erpatlas` -> `atlas-erp-73956.web.app` (Atlas ERP).
+    - Registros A (4 IPs) e CNAME `www` -> GitHub Pages (Landing Page).
+  - **Firebase Hosting:** Domínio personalizado `erpatlas.nandatech.com.br` verificado com sucesso pelo Google com emissão automática de certificado SSL gratuito.
+  - **Atlas ERP:** Logotipo oficial NandaTech integrado na tela de login e cabeçalho, com commit e push em `nandacarat-tech/AtlasERP`.
+  - **Configuração de Proxy:** Criados `firebase.json` e `.firebaserc` com rewrite determinístico para o Cloud Run `atlas-erp` na região `southamerica-east1`.
 
 ---
+
